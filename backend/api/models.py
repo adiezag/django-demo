@@ -23,7 +23,7 @@ class ProfileDemo(models.Model):
     ACTIVITY_LEVEL_CHOICES = [("sedentary", "Sedentary"), ("light","Light"),("moderate","Moderate"),("active","Active")]
     activity_level = models.CharField(max_length=20, choices=ACTIVITY_LEVEL_CHOICES)
 
-    GOAL_CHOICES = [("lose_weight","Lose weight"),("maintain","Maintain"),("lose_weight","Lose weight")]
+    GOAL_CHOICES = [("lose","Lose"),("maintain","Maintain"),("gain","Gain")]
     goal = models.CharField(max_length=20, choices=GOAL_CHOICES)
 
     def __str__(self):
