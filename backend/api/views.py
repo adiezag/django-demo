@@ -38,4 +38,6 @@ class ProfileDemoView(generics.RetrieveUpdateAPIView):
     serializer_class = ProfileDemoSerializer
     permission_classes = [IsAuthenticated]
 
-    
+    def get_object(self):
+        profile, created = ProfileDemo.objects.get_or_create(user=self.request.user)
+        return profile
