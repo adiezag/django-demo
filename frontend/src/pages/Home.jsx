@@ -49,12 +49,19 @@ function Home() {
   const createProfile = (e) => {
     e.preventDefault();
     api
-      .post("/api/profile/", { height, weight, age, activity_level, goal })
+      .post("/api/profile/", {
+        height,
+        weight,
+        date_of_birth: dateOfBirth,
+        activity_level,
+        goal,
+      })
       .then((res) => {
         if (res.status === 201) alert("profile created");
         else alert("failed to make profile");
       })
       .catch((err) => alert(err));
+    console.log(height, weight, dateOfBirth, activity_level, goal);
   };
   return (
     <div>
@@ -111,13 +118,14 @@ function Home() {
           onChange={(e) => setWeight(e.target.value)}
         ></input>
         <br />
-        <label htmlFor="age">Age:</label>
+        <label htmlFor="age">Date of birth:</label>
         <br />
         <input
           type="date"
           id="date_of_birth"
           name="date_of_birth"
           required
+          max={new Date().toISOString().split("T")[0]}
           onChange={(e) => setDateOfBirth(e.target.value)}
           value={dateOfBirth}
         />

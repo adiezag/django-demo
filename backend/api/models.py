@@ -19,7 +19,7 @@ class ProfileDemo(models.Model):
     # profile fields
     height = models.IntegerField()
     weight = models.IntegerField()
-    date_of_birth = models.DateField(default=date.today)
+    date_of_birth = models.DateField()
 
     ACTIVITY_LEVEL_CHOICES = [("sedentary", "Sedentary"), ("light","Light"),("moderate","Moderate"),("active","Active")]
     activity_level = models.CharField(max_length=20, choices=ACTIVITY_LEVEL_CHOICES)
