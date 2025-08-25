@@ -21,5 +21,5 @@ class NoteSerializer(serializers.ModelSerializer):
 class ProfileDemoSerializer(serializers.ModelSerializer):
     class Meta:
         model = ProfileDemo
-        fields = ["id","user", "height", "weight", "age", "activity_level", "goal"]
+        fields = ["id","user", "height", "weight", "age","date_of_birth","activity_level", "goal"]
         extra_kwargs = {"user":{"read_only":True}}

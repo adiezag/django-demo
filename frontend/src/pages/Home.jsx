@@ -8,7 +8,7 @@ function Home() {
   const [title, setTitle] = useState("");
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
-  const [age, setAge] = useState("");
+  const [dateOfBirth, setDateOfBirth] = useState("");
   const [activity_level, setActivity_level] = useState("");
   const [goal, setGoal] = useState("");
 
@@ -114,12 +114,12 @@ function Home() {
         <label htmlFor="age">Age:</label>
         <br />
         <input
-          type="number"
-          id="age"
-          name="age"
+          type="date"
+          id="date_of_birth"
+          name="date_of_birth"
           required
-          onChange={(e) => setAge(e.target.value)}
-          value={age}
+          onChange={(e) => setDateOfBirth(e.target.value)}
+          value={dateOfBirth}
         />
         <label htmlFor="activity_level">Activity level:</label>
         <br />

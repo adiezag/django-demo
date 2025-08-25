@@ -1,13 +1,14 @@
 import React from "react";
 
-function ProfileC(profileC) {
+function ProfileC({ profile }) {
+  console.log("test");
   return (
     <div>
-      <p>{profileC.height}</p>
-      <p>{profileC.weight}</p>
-      <p>{profileC.age}</p>
-      <p>{profileC.activity_level}</p>
-      <p>{profileC.goal}</p>
+      <p>Height: {profile.height}</p>
+      <p>Weight: {profile.weight}</p>
+      <p>Age: {profile.age}</p>
+      <p>Activity level: {profile.activity_level}</p>
+      <p>Goal: {profile.goal}</p>
     </div>
   );
 }

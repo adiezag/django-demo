@@ -3,6 +3,11 @@ import { useState, useEffect } from "react";
 import api from "../api";
 function Profile() {
   const [profile, setProfile] = useState([]);
+  // const [height, setHeight] = useState("");
+  // const [weight, setWeight] = useState("");
+  // const [age, setAge] = useState("");
+  // const [activity_level, setActivity_level] = useState("");
+  // const [goal, setGoal] = useState("");
   useEffect(() => {
     getProfile();
   }, []);
@@ -12,6 +17,7 @@ function Profile() {
       .then((res) => res.data)
       .then((data) => {
         setProfile(data);
+        console.log(data);
       })
       .catch((err) => alert(err));
   };
@@ -20,8 +26,8 @@ function Profile() {
     <div>
       <div>
         <h2>User's profile</h2>
-        {profile.map((profile_) => (
-          <ProfileC profile_={profile_} key={profile_} />
+        {profile.map((profile) => (
+          <ProfileC profile={profile} key={profile} />
         ))}
       </div>
     </div>
