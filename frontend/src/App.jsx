@@ -5,6 +5,7 @@ import Register from "./pages/Register";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Profile from "./pages/Profile";
+import WeightHistory from "./pages/WeightHistory";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function Logout() {
@@ -34,6 +35,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Profile />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/weight-history"
+          element={
+            <ProtectedRoute>
+              <WeightHistory />
             </ProtectedRoute>
           }
         />
