@@ -35,5 +35,38 @@ class ProfileDemo(models.Model):
             age -= 1
         return age
 
+    # def __str__(self):
+    #     return f"{self.user.username}'s profile"
+    
+    def save(self, *args, **kwargs):
+        # Get old weight before saving (only if updating existing profile)
+        old_weight = None
+        if self.pk: # Profile exists (updating)
+            try:
+                old_instance = ProfileDemo.objects.get(pk=self.pk)
+                old_weight = old_instance.weight
+            except:
+                old_weight = None
+        is_new = self.pk is None
+        # Save the profile
+        super().save(*args, **kwargs)
+
+        # Create WeightEntry if new profile or weight changed
+
+        if is_new or (old_weight is not None and old_weight != self.weight):
+            WeightEntry.objects.create(user=self.user, weight = self.weight)
+
+
     def __str__(self):
         return f"{self.user.username}'s profile"
+
+class WeightEntry(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="weight_entries")
+    weight = models.IntegerField()
+    recorded_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-recorded_at'] # Most recent first by default
+
+    def __str__(self):
+        return f"{self.user.username} : {self.weight}kg on {self.recorded_at.strftime('%Y-%m-%d')}"
