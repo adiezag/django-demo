@@ -1,6 +1,8 @@
 import axios from "axios";
 import { ACCESS_TOKEN } from "./constants";
 
+export const N8N_WEBHOOK_URL = import.meta.env.VITE_N8N_WEBHOOK_URL;
+
 const api = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
 });
