@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Profile from "./pages/Profile";
 import WeightHistory from "./pages/WeightHistory";
+import MealPlans from "./pages/MealPlan";
 import ProtectedRoute from "./components/ProtectedRoute";
 
 function Logout() {
@@ -43,6 +44,14 @@ function App() {
           element={
             <ProtectedRoute>
               <WeightHistory />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/meal-plans"
+          element={
+            <ProtectedRoute>
+              <MealPlans />
             </ProtectedRoute>
           }
         />
