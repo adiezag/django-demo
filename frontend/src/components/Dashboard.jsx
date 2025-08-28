@@ -12,7 +12,7 @@ function Dashboard() {
     },
     {
       title: "Meal Plans",
-      description: "Get personalized meal recommendations",
+      description: "Get AI personalized meal recommendations",
       action: () => navigate("/meal-plans"),
       color: "#2196F3",
     },
