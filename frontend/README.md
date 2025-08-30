@@ -1,12 +1,54 @@
-# React + Vite
+# AI Meal Planner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-stack web application that generates personalized meal plans using AI based on user fitness profiles and goals.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- User registration and JWT authentication
+- Personalized meal plan generation using AI
+- Weight tracking with progress visualization
+- Real-time AI integration via n8n workflows
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+**Backend**
+
+- Django REST Framework
+- PostgreSQL
+- JWT Authentication
+
+**Frontend**
+
+- React
+- Vite
+- Data visualization for weight tracking
+
+**AI/Automation**
+
+- n8n workflow automation
+- GPT model integration
+- PostgreSQL database queries
+
+## How It Works
+
+1. Users create profiles with height, weight, age, activity level, and goals
+2. Frontend sends requests to n8n workflow with user data
+3. AI agent queries user profile and generates personalized meal plans
+4. Users can track weight progress with interactive charts
+
+## Database Schema
+
+- **User Profile**: Stores user metrics and fitness goals
+- **Weight History**: Tracks weight changes over time
+
+## Setup
+
+1. Clone the repository
+2. Set up PostgreSQL database
+3. Configure Django backend with environment variables
+4. Install frontend dependencies and run Vite dev server
+5. Set up n8n workflow with webhook and AI agent configuration
+
+## API Integration
+
+The application integrates with n8n workflows through HTTP POST requests, enabling real-time AI meal plan generation based on stored user profiles.
