@@ -52,3 +52,12 @@ A full-stack web application that generates personalized meal plans using AI bas
 ## API Integration
 
 The application integrates with n8n workflows through HTTP POST requests, enabling real-time AI meal plan generation based on stored user profiles.
+
+## Running the application
+
+- Backend:
+  cd backend
+  python3 manage.py runserver
+
+- Frontend:
+  npm run dev
