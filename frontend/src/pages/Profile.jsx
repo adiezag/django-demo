@@ -100,7 +100,20 @@ function Profile() {
   return (
     <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
       <div>
-        <button onClick={() => navigate("/")}>Home</button>
+        <button
+          onClick={() => navigate("/")}
+          style={{
+            marginRight: "10px",
+            padding: "10px 20px",
+            backgroundColor: "#07536cff",
+            color: "white",
+            border: "none",
+            borderRadius: "4px",
+            // cursor: isLoading ? "not-allowed" : "pointer",
+          }}
+        >
+          Home
+        </button>
       </div>
       <h2>User's profile</h2>
 
