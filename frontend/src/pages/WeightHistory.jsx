@@ -157,7 +157,19 @@ function WeightHistory() {
         <WeightList entries={weightEntries} />
       )}
       <div>
-        <button onClick={() => navigate("/")}>Home</button>
+        <button
+          onClick={() => navigate("/")}
+          style={{
+            marginRight: "10px",
+            padding: "10px 20px",
+            backgroundColor: "#07536cff",
+            color: "white",
+            border: "none",
+            borderRadius: "4px",
+          }}
+        >
+          Home
+        </button>
       </div>
     </div>
   );
