@@ -35,12 +35,12 @@ function MealPlans() {
         <button
           onClick={() => navigate("/")}
           style={{
-            float: "left",
-            padding: "8px 15 px",
-            backgroundColor: "#f0f0f0",
-            border: "1px solid #ddd",
-            borderRadius: "5px",
-            cursor: "pointer",
+            marginRight: "10px",
+            padding: "10px 20px",
+            backgroundColor: "#07536cff",
+            color: "white",
+            border: "none",
+            borderRadius: "4px",
           }}
         >
           ←Back to Dashboard
