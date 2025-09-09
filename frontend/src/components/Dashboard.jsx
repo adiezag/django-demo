@@ -28,6 +28,12 @@ function Dashboard() {
       action: () => navigate("/settings"),
       color: "#9C27B0",
     },
+    {
+      title: "Calculator",
+      description: "Calculator",
+      action: () => navigate("/calculator"),
+      color: "#d94545ff",
+    },
   ];
 
   return (
