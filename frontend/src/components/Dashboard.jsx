@@ -30,7 +30,7 @@ function Dashboard() {
     },
     {
       title: "Calculator",
-      description: "Calculator",
+      description: "Calculate weight bar",
       action: () => navigate("/calculator"),
       color: "#d94545ff",
     },
