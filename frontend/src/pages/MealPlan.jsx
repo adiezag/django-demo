@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import MealPlanService from "../services/MealPlanService";
 import MealPlanDisplay from "../components/MealPlanDisplay";
 import MealPlanDisp from "../components/MealPlanDisp";
+import MealPlanChat from "../components/MealPlanChat";
 function MealPlans() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [mealPlan, setMealPlan] = useState(null);
@@ -176,7 +177,8 @@ function MealPlans() {
           >
             {/* This will display whatever structure n8n returns */}
             {/* <MealPlanDisplay data={mealPlan} /> */}
-            <MealPlanDisp data={mealPlan} />
+            {/* <MealPlanDisp data={mealPlan} /> */}
+            <MealPlanChat />
           </div>
         </div>
       )}
