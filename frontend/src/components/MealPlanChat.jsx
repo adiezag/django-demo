@@ -21,16 +21,16 @@ function MealPlanChat() {
     setInputMessage("");
     setIsLoading(true);
 
-    try {
-      await new Promise((resolve) => setTimeout(resolve, 1000));
-      const aiMessage = {
-        id: Date.now() + 1,
-        type: "ai",
-        content: `Based on your request: "${userMessage.content}"`,
-      };
-    } catch {
-    } finally {
-    }
+    // try {
+    //   await new Promise((resolve) => setTimeout(resolve, 1000));
+    //   const aiMessage = {
+    //     id: Date.now() + 1,
+    //     type: "ai",
+    //     content: `Based on your request: "${userMessage.content}"`,
+    //   };
+    // } catch {
+    // } finally {
+    // }
   };
   return;
   <div>
