@@ -3,7 +3,7 @@ import { N8N_WEBHOOK_URL } from "../api";
 
 class MealPlanService {
   // Trigger meal plan generation via n8n webhook
-  static async generateMealPlan(userId) {
+  static async sendChatMessage(userId, message) {
     // console.log("DEBUG - userId received:", userId, typeof userId);
 
     // const payload = { user_id: userId };
@@ -25,7 +25,7 @@ class MealPlanService {
         },
         body: JSON.stringify({
           user_id: userId,
-          message: "hello",
+          message: message,
         }),
       });
       if (!response.ok) {
@@ -33,9 +33,9 @@ class MealPlanService {
           `Webhook request failed: ${response.status} ${response.statusText}`
         );
       }
-      const mealPlanData = await response.json();
-      console.log("Hello. Meal plan generated successfully: ", mealPlanData);
-      return mealPlanData;
+      const responseData = await response.json();
+      console.log("Hello. Meal plan generated successfully: ", responseData);
+      return responseData;
     } catch (error) {
       console.error("Error generating meal plan: ", error);
       throw new Error(`Failed to generate meal plan: ${error.message}`);
