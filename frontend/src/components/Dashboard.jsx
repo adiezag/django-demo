@@ -28,12 +28,12 @@ function Dashboard() {
       action: () => navigate("/settings"),
       color: "#9C27B0",
     },
-    {
-      title: "Calculator",
-      description: "Calculate weight bar",
-      action: () => navigate("/calculator"),
-      color: "#d94545ff",
-    },
+    // {
+    //   title: "Calculator",
+    //   description: "Calculate weight bar",
+    //   action: () => navigate("/calculator"),
+    //   color: "#d94545ff",
+    // },
   ];
 
   return (
