@@ -2,6 +2,6 @@ version: 0.1
 endpoints:
   - name: django-web-app
     port: 8000
-    type: web
-    networkVisibility: project
+    type: REST
+    networkVisibility: Public
     context: /
