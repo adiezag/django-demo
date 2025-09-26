@@ -29,10 +29,10 @@ function WeightStats({ entries }) {
           borderRadius: "10px",
           boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
           textAlign: "center",
-          border: "3px solid #4CAF50",
+          border: "3px solid #00796B",
         }}
       >
-        <h3 style={{ color: "#4CAF50", margin: "0 0 10px 0" }}>
+        <h3 style={{ color: "#00796B", margin: "0 0 10px 0" }}>
           Current Weight
         </h3>
         <p
@@ -54,10 +54,10 @@ function WeightStats({ entries }) {
           borderRadius: "10px",
           boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
           textAlign: "center",
-          border: `3px solid ${weightChange >= 0 ? "#FF9800" : "#2196F3"}`,
+          border: `3px solid ${weightChange >= 0 ? "#D84315" : "#2196F3"}`,
         }}
       >
-        <h3 style={{ color: "#9C27B0", margin: "0 0 10px 0" }}>Recent Trend</h3>
+        <h3 style={{ color: "#D84315", margin: "0 0 10px 0" }}>Recent Trend</h3>
         <p
           style={{
             fontSize: "24px",
@@ -69,7 +69,7 @@ function WeightStats({ entries }) {
           {recentChange > 0 ? "+" : ""}
           {recentChange} kg
         </p>
-        <small style={{ color: "#666" }}>Last 7 entries</small>
+        <small style={{ color: "#667" }}>Last 7 entries</small>
       </div>
       <div
         style={{
@@ -94,7 +94,7 @@ function WeightStats({ entries }) {
         >
           {totalEntries}
         </p>
-        <small style={{ color: "#666" }}>Weight records</small>
+        <small style={{ color: "#665" }}>Weight records</small>
       </div>
     </div>
   );

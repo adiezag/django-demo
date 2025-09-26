@@ -89,7 +89,7 @@ function WeightChart({ entries }) {
           <path
             d={pathData}
             fill="none"
-            stroke="#4CAF50"
+            stroke="#00796B"
             strokeWidth="3"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -102,7 +102,7 @@ function WeightChart({ entries }) {
                 cx={point.x}
                 cy={point.y}
                 r="5"
-                fill="#4CAF50"
+                fill="#00796B"
                 stroke="white"
                 strokeWidth="2"
               />

@@ -45,11 +45,11 @@ function ProtectedRoute({ children }) {
     }
   };
 
-  if (isAuthorized == null) {
+  if (isAuthorized === null) {
     return <div>Loading...</div>;
   }
 
-  return isAuthorized ? children : <Navigate to="login" />;
+  return isAuthorized ? children : <Navigate to="/login" replace />;
 }
 
 export default ProtectedRoute;

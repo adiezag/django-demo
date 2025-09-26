@@ -203,12 +203,12 @@ function MealPlans() {
           marginBottom: "20px",
         }}
       >
-        <h2 style={{ margin: 0 }}></h2>
+        <h2 style={{ margin: 0 }}>Meal Plans</h2>
         <button
           onClick={() => navigate("/")}
           style={{
             padding: "10px 20px",
-            backgroundColor: "#4CAF50",
+            backgroundColor: "#546E7A",
             color: "white",
             border: "none",
             borderRadius: "5px",
@@ -221,10 +221,12 @@ function MealPlans() {
         </button>
       </div>
       <div>
-        <h2>AI Nutrition Assistant</h2>
+        <h3 style={{ marginBottom: "10px" }}>AI Nutrition Assistant</h3>
+
         <p>
           Chat with your personal AI nutrition assistant for meal plans and
-          dietary advice
+          dietary advice. Get personalized recommendations based on your goals
+          and preferences.
         </p>
       </div>
       <MealPlanChat />

@@ -134,7 +134,7 @@ function ProfileC({ profile, onUpdate }) {
             style={{
               marginRight: "10px",
               padding: "10px 20px",
-              backgroundColor: "#4CAF50",
+              backgroundColor: "#546E7A",
               color: "white",
               border: "none",
               borderRadius: "5px",
@@ -191,7 +191,7 @@ function ProfileC({ profile, onUpdate }) {
         onClick={() => setIsEditing(true)}
         style={{
           padding: "10px 20px",
-          backgroundColor: "#4CAF50",
+          backgroundColor: "#546E7A",
           color: "white",
           border: "none",
           borderRadius: "5px",

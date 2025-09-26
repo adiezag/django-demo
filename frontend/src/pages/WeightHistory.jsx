@@ -114,7 +114,7 @@ function WeightHistory() {
           onClick={() => navigate("/")}
           style={{
             padding: "10px 20px",
-            backgroundColor: "#4CAF50",
+            backgroundColor: "#546E7A",
             color: "white",
             border: "none",
             borderRadius: "5px",
@@ -147,7 +147,7 @@ function WeightHistory() {
               padding: "10px 20px",
               border: "none",
               borderRadius: "6px",
-              backgroundColor: viewMode === "chart" ? "#4CAF50" : "transparent",
+              backgroundColor: viewMode === "chart" ? "#546E7A" : "transparent",
               color: viewMode === "chart" ? "white" : "#450",
               cursor: "pointer",
               fontWeight: viewMode === "chart" ? "bold" : "normal",

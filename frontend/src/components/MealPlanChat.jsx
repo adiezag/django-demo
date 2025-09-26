@@ -2,14 +2,6 @@ import React, { useEffect, useState } from "react";
 import MealPlanService from "../services/MealPlanService";
 
 function MealPlanChat() {
-  // const [messages, setMessages] = useState([
-  //   {
-  //     id: 1,
-  //     type: "ai",
-  //     content: "hi, i am your personal meal planning assistant",
-  //   },
-  // ]);
-
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -171,7 +163,7 @@ function MealPlanChat() {
           disabled={!inputMessage.trim() || !userId || isLoading}
           style={{
             padding: "12px 20px",
-            backgroundColor: isLoading ? "#ccc" : "#4CAF50",
+            backgroundColor: isLoading ? "#ccc" : "#546E7A",
             color: "white",
             border: "none",
             borderRadius: "8px",

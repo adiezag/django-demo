@@ -1,3 +1,5 @@
+import { Navigate } from "react-router-dom";
+
 export const getActivityLevelDisplay = (value) => {
   const mapping = {
     sedentary: "Sedentary",
@@ -15,4 +17,9 @@ export const getGoalDisplay = (value) => {
     gain: "Gain Weight",
   };
   return mapping[value] || value;
+};
+
+export const Logout = () => {
+  localStorage.clear();
+  window.location.href = "/login"; // plain JS redirect
 };

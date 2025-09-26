@@ -50,7 +50,21 @@ function Form({ route, method }) {
         placeholder="Password"
       />
       {loading && <LoadingIndicator />}
-      <button className="form-button" type="submit">
+      <button
+        className="form-button"
+        type="submit"
+        style={{
+          padding: "10px 20px",
+          backgroundColor: "#4CAF50",
+          color: "white",
+          border: "none",
+          borderRadius: "5px",
+          fontSize: "16px",
+          cursor: "pointer",
+          fontWeight: "bold",
+          marginTop: "10px",
+        }}
+      >
         {name}
       </button>
     </form>

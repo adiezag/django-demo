@@ -8,7 +8,7 @@ function Dashboard() {
       title: "My Profile",
       description: "View and update your profile information",
       action: () => navigate("/profile"),
-      color: "#4CAF50",
+      color: "#2E7D32",
     },
     {
       title: "Meal Plans",
@@ -20,7 +20,7 @@ function Dashboard() {
       title: "Weight Tracking",
       description: "Track your weight progress over time",
       action: () => navigate("/weight-history"),
-      color: "#FF9800",
+      color: "#D84315",
     },
     {
       title: "Settings",
