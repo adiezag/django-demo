@@ -70,3 +70,18 @@ class WeightEntry(models.Model):
 
     def __str__(self):
         return f"{self.user.username} : {self.weight}kg on {self.recorded_at.strftime('%Y-%m-%d')}"
+    
+class Macros(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="macros")
+    calories = models.IntegerField()
+    protein = models.IntegerField()
+    carbohydrates = models.IntegerField()
+    fats = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add = True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name_plural = "Macros"
+
+    def __str__(self):
+        return f"{self.user.username}: {self.calories} kcal"

@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers
 from .models import Note
-from .models import ProfileDemo, WeightEntry
+from .models import ProfileDemo, WeightEntry, Macros
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -30,3 +30,9 @@ class WeightEntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = WeightEntry
         fields = ["id", "user","weight","recorded_at"]
+
+class MacrosSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Macros
+        fields = ['calories', 'protein', 'carbohydrates', 'fats', 'updated_at']
+        read_only_fields = ['updated_at']
