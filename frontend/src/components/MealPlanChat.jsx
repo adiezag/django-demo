@@ -24,7 +24,7 @@ function MealPlanChat() {
           {
             sender: "ai",
             content:
-              "Hi, I am your ai nutrition assistant. How can I help you today?",
+              "Hi, I am your AI nutrition assistant. How can I help you today?",
             timestamp: new Date(),
           },
         ]);
@@ -83,7 +83,7 @@ function MealPlanChat() {
         backgroundColor: "white",
         borderRadius: "10px",
         boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
-        border: "3px solid #4CAF50",
+        border: "3px solid #2196F3",
         height: "600px",
         display: "flex",
         flexDirection: "column",
@@ -134,7 +134,7 @@ function MealPlanChat() {
                 color: "#456",
               }}
             >
-              ai is typing...
+              AI is typing...
             </div>
           </div>
         )}
@@ -151,7 +151,7 @@ function MealPlanChat() {
           value={inputMessage}
           onChange={(e) => setInputMessage(e.target.value)}
           onKeyDown={handleKeyPress}
-          placeholder="enter text"
+          placeholder="Enter text"
           disabled={isLoading}
           style={{
             flex: 1,

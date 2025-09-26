@@ -99,24 +99,31 @@ function Profile() {
 
   return (
     <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
-      <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "20px",
+        }}
+      >
+        <h2 style={{ margin: 0 }}>User's Profile</h2>
         <button
           onClick={() => navigate("/")}
           style={{
-            marginRight: "10px",
             padding: "10px 20px",
-            backgroundColor: "#07536cff",
+            backgroundColor: "#4CAF50",
             color: "white",
             border: "none",
-            borderRadius: "4px",
-            // cursor: isLoading ? "not-allowed" : "pointer",
+            borderRadius: "5px",
+            fontSize: "16px",
+            cursor: "pointer",
+            fontWeight: "bold",
           }}
         >
-          Home
+          ← Dashboard
         </button>
       </div>
-      <h2>User's profile</h2>
-
       <ProfileC profile={profile} onUpdate={updateProfile} />
     </div>
   );

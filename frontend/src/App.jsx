@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import Profile from "./pages/Profile";
 import WeightHistory from "./pages/WeightHistory";
+import Settings from "./pages/Settings";
 import MealPlans from "./pages/MealPlan";
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -52,6 +53,14 @@ function App() {
           element={
             <ProtectedRoute>
               <MealPlans />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/settings"
+          element={
+            <ProtectedRoute>
+              <Settings />
             </ProtectedRoute>
           }
         />

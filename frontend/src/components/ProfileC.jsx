@@ -1,4 +1,8 @@
 import React, { useState } from "react";
+import {
+  getActivityLevelDisplay,
+  getGoalDisplay,
+} from "../utils/displayHelpers";
 
 function ProfileC({ profile, onUpdate }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -50,7 +54,9 @@ function ProfileC({ profile, onUpdate }) {
       >
         <h3>Edit Profile</h3>
         <div style={{ marginBottom: "10px" }}>
-          <label>Height (cm): </label>
+          <label>
+            <strong>Height (cm): </strong>
+          </label>
           <input
             type="number"
             name="height"
@@ -61,7 +67,9 @@ function ProfileC({ profile, onUpdate }) {
         </div>
 
         <div style={{ marginBottom: "10px" }}>
-          <label>Weight (kg): </label>
+          <label>
+            <strong>Weight (kg):</strong>{" "}
+          </label>
           <input
             type="number"
             name="weight"
@@ -71,7 +79,7 @@ function ProfileC({ profile, onUpdate }) {
           />
         </div>
 
-        <div style={{ marginBottom: "10px" }}>
+        {/* <div style={{ marginBottom: "10px" }}>
           <label>Date of Birth: </label>
           <input
             type="date"
@@ -80,25 +88,34 @@ function ProfileC({ profile, onUpdate }) {
             onChange={handleInputChange}
             style={{ marginLeft: "10px", padding: "5px" }}
           />
-        </div>
+        </div> */}
 
         <div style={{ marginBottom: "10px" }}>
-          <label>Activity level: </label>
+          <label>
+            <strong>Activity level: </strong>
+          </label>
           <select
             name="activity_level"
             value={editData.activity_level}
             onChange={handleInputChange}
             style={{ marginLeft: "10px", padding: "5px" }}
           >
-            <option value="sedentary">Sedentary</option>
-            <option value="light">Light</option>
-            <option value="moderate">Moderate</option>
-            <option value="active">Active</option>
+            {/* <option value="">-- Select your activity level --</option> */}
+            <option value="sedentary">Sedentary (little to no exercise)</option>
+            <option value="light">Light (light exercise 1-3 days/week)</option>
+            <option value="moderate">
+              Moderate (moderate exercise 3-5 days/week)
+            </option>
+            <option value="active">
+              Active (heavy exercise 6-7 days/week)
+            </option>
           </select>
         </div>
 
         <div style={{ marginBottom: "20px" }}>
-          <label>Goal: </label>
+          <label>
+            <strong>Goal: </strong>
+          </label>
           <select
             name="goal"
             value={editData.goal}
@@ -120,7 +137,9 @@ function ProfileC({ profile, onUpdate }) {
               backgroundColor: "#4CAF50",
               color: "white",
               border: "none",
-              borderRadius: "4px",
+              borderRadius: "5px",
+              fontSize: "16px",
+              fontWeight: "bold",
               cursor: isLoading ? "not-allowed" : "pointer",
             }}
           >
@@ -134,7 +153,9 @@ function ProfileC({ profile, onUpdate }) {
               backgroundColor: "#f44336",
               color: "white",
               border: "none",
-              borderRadius: "4px",
+              borderRadius: "5px",
+              fontSize: "16px",
+              fontWeight: "bold",
               cursor: isLoading ? "not-allowed" : "pointer",
             }}
           >
@@ -160,20 +181,23 @@ function ProfileC({ profile, onUpdate }) {
         <strong>Age:</strong> {profile.age}
       </p>
       <p>
-        <strong>Activity level:</strong> {profile.activity_level}
+        <strong>Activity level:</strong>{" "}
+        {getActivityLevelDisplay(profile.activity_level)}
       </p>
       <p>
-        <strong>Goal:</strong> {profile.goal}
+        <strong>Goal:</strong> {getGoalDisplay(profile.goal)}
       </p>
       <button
         onClick={() => setIsEditing(true)}
         style={{
           padding: "10px 20px",
-          backgroundColor: "#008CBA",
+          backgroundColor: "#4CAF50",
           color: "white",
           border: "none",
-          borderRadius: "4px",
+          borderRadius: "5px",
+          fontSize: "16px",
           cursor: "pointer",
+          fontWeight: "bold",
           marginTop: "10px",
         }}
       >

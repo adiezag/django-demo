@@ -101,6 +101,31 @@ function WeightHistory() {
   }
   return (
     <div style={{ maxWidth: "1000px", margin: "0 auto", padding: "20px" }}>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "20px",
+        }}
+      >
+        <h2 style={{ margin: 0 }}></h2>
+        <button
+          onClick={() => navigate("/")}
+          style={{
+            padding: "10px 20px",
+            backgroundColor: "#4CAF50",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            fontSize: "16px",
+            cursor: "pointer",
+            fontWeight: "bold",
+          }}
+        >
+          ← Dashboard
+        </button>
+      </div>
       <div style={{ textAlign: "center", marginBottom: "30px" }}>
         <h2>Weight Tracking</h2>
         <p style={{ color: "#450" }}>Track your weight progress over time</p>
@@ -156,21 +181,6 @@ function WeightHistory() {
       ) : (
         <WeightList entries={weightEntries} />
       )}
-      <div>
-        <button
-          onClick={() => navigate("/")}
-          style={{
-            marginRight: "10px",
-            padding: "10px 20px",
-            backgroundColor: "#07536cff",
-            color: "white",
-            border: "none",
-            borderRadius: "4px",
-          }}
-        >
-          Home
-        </button>
-      </div>
     </div>
   );
 }

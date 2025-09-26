@@ -55,7 +55,8 @@ function ProfileSetup({ onProfileCreated }) {
   return (
     <div style={{ maxWidth: "500px", margin: "0 auto", padding: "20px" }}>
       <div style={{ textAlign: "center", marginBottom: "30px" }}>
-        <h1>Welcome! Let's set up your profile</h1>
+        <h1>Welcome! </h1>
+        <h1>Let's set up your profile</h1>
         <p>
           We need some basic information to create personalized meal plans for
           you.

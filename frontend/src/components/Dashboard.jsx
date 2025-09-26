@@ -40,8 +40,8 @@ function Dashboard() {
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
       <header style={{ textAlign: "center", marginBottom: "40px" }}>
         <h1>Welcome back!</h1>
-        <p style={{ color: "#560", fontSize: "18px" }}>
-          What would you like to do today?
+        <p style={{ marginTop: "8px", fontSize: "16px" }}>
+          <strong>Dashboard</strong>
         </p>
       </header>
 
@@ -84,7 +84,7 @@ function Dashboard() {
         ))}
       </div>
 
-      <div
+      {/* <div
         style={{
           textAlign: "center",
           padding: "20px",
@@ -109,7 +109,7 @@ function Dashboard() {
         >
           Get Meal Plan
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

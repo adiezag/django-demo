@@ -195,8 +195,32 @@ function MealPlans() {
 
   return (
     <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBottom: "20px",
+        }}
+      >
+        <h2 style={{ margin: 0 }}></h2>
+        <button
+          onClick={() => navigate("/")}
+          style={{
+            padding: "10px 20px",
+            backgroundColor: "#4CAF50",
+            color: "white",
+            border: "none",
+            borderRadius: "5px",
+            fontSize: "16px",
+            cursor: "pointer",
+            fontWeight: "bold",
+          }}
+        >
+          ← Dashboard
+        </button>
+      </div>
       <div>
-        <button onClick={() => navigate("/")}>Back to dashboard</button>
         <h2>AI Nutrition Assistant</h2>
         <p>
           Chat with your personal AI nutrition assistant for meal plans and
