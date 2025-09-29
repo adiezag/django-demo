@@ -18,6 +18,8 @@ class MealPlanService {
     // });
     try {
       console.log("Triggering meal plan generation for user: ", userId);
+      console.log(import.meta.env.VITE_API_URL);
+      console.log(import.meta.env.VITE_N8N_WEBHOOK_URL);
       const response = await fetch(N8N_WEBHOOK_URL, {
         method: "POST",
         headers: {
