@@ -163,3 +163,12 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # add the two variables from below - demo
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWS_CREDENTIALS = True
+
+
+print("CHOREO ENV DB_USER:", os.getenv("DB_USER"))
+
+print("CHOREO ENV DB_NAME:", os.getenv("DB_NAME"))
+
+print("CHOREO ENV DB_HOST:", os.getenv("DB_HOST"))
+print("CHOREO ENV DB_PORT", os.getenv("DB_PORT"))
+
