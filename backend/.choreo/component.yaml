@@ -1,7 +1,11 @@
-# version: 1.2
-# endpoints:
-#   - name: django-web-app
-#     port: 8000
-#     type: REST
-#     networkVisibility: Public
-#     context: /
+schemaVersion: "1.2"
+endpoints:
+  - name: django-web-app-be2
+    displayName: django-web-app
+    service:
+      basePath: /
+      port: 8000
+    type: REST
+    networkVisibilities:
+      - Project
+      - Public
