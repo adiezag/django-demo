@@ -1,6 +1,6 @@
 import { useState } from "react";
 import api from "../api";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "../constants";
 import "../styles/Form.css";
 import LoadingIndicator from "./LoadingIndicator";
@@ -67,6 +67,37 @@ function Form({ route, method }) {
       >
         {name}
       </button>
+      <p style={{ marginTop: "20px", textAlign: "center" }}>
+        {method === "login" ? (
+          <>
+            Don't have an account?{" "}
+            <Link
+              to="/register"
+              style={{
+                color: "#4CAF50",
+                textDecoration: "none",
+                fontWeight: "bold",
+              }}
+            >
+              Register here
+            </Link>
+          </>
+        ) : (
+          <>
+            Already have an account?{" "}
+            <Link
+              to="/login"
+              style={{
+                color: "#4CAF50",
+                textDecoration: "none",
+                fontWeight: "bold",
+              }}
+            >
+              Login here
+            </Link>
+          </>
+        )}
+      </p>
     </form>
   );
 }
