@@ -2,7 +2,7 @@ import axios from "axios";
 import { ACCESS_TOKEN } from "./constants";
 
 export const N8N_WEBHOOK_URL =
-  window.configs.import.meta.env.VITE_N8N_WEBHOOK_URL;
+  window.config.import.meta.env.VITE_N8N_WEBHOOK_URL;
 
 const apiUrl = "/choreo-apis/dajngo-react-web-app/backend/v1";
 const api = axios.create({
