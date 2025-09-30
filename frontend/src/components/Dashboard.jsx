@@ -79,7 +79,7 @@ function Dashboard() {
             <h3 style={{ color: item.color, marginBottom: "10px" }}>
               {item.title}
             </h3>
-            <p style={{ color: "#666", margin: "0" }}>{item.description}</p>
+            <p style={{ color: "#665", margin: "0" }}>{item.description}</p>
           </div>
         ))}
       </div>

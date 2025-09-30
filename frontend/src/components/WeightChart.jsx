@@ -79,7 +79,7 @@ function WeightChart({ entries }) {
               y={padding + (i / 4) * graphHeight + 5}
               textAnchor="end"
               fontSize="12"
-              fill="#666"
+              fill="#665"
             >
               {Math.round(maxWeight - (i / 4) * weightRange)}kg
             </text>
