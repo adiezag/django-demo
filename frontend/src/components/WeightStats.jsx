@@ -10,9 +10,13 @@ function WeightStats({ entries }) {
   const recentEntries = entries.slice(0, Math.min(7, entries.length));
   const recentChange =
     recentEntries.length > 1
-      ? recentEntries[0].weight - recentEntries[recentEntries.length - 1].weight
+      ? (
+          recentEntries[0].weight -
+          recentEntries[recentEntries.length - 1].weight
+        ).toFixed(1)
       : 0;
-
+  // console.log(recentEntries);
+  // console.log(recentChange);
   return (
     <div
       style={{
