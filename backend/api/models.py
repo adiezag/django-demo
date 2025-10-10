@@ -18,7 +18,7 @@ class ProfileDemo(models.Model):
     
     # profile fields
     height = models.IntegerField()
-    weight = models.IntegerField()
+    weight = models.FloatField()
     date_of_birth = models.DateField()
 
     ACTIVITY_LEVEL_CHOICES = [("sedentary", "Sedentary"), ("light","Light"),("moderate","Moderate"),("active","Active")]
@@ -62,7 +62,7 @@ class ProfileDemo(models.Model):
 
 class WeightEntry(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE, related_name="weight_entries")
-    weight = models.IntegerField()
+    weight = models.FloatField()
     recorded_at = models.DateTimeField(auto_now_add=True)
 
     class Meta:
