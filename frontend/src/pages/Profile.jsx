@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function Profile() {
   const navigate = useNavigate();
   const [profile, setProfile] = useState(null);
-  console.log(profile);
+  // console.log(profile);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
@@ -21,7 +21,7 @@ function Profile() {
 
       setProfile(data);
 
-      console.log("Profile data: ", data);
+      // console.log("Profile data: ", data);
     } catch (err) {
       console.error("Error fetching profile:", err);
       if (err.response?.status === 404) {

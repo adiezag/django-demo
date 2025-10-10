@@ -17,9 +17,9 @@ class MealPlanService {
     //   body: JSON.stringify(payload),
     // });
     try {
-      console.log("Triggering meal plan generation for user: ", userId);
-      console.log(import.meta.env.VITE_API_URL);
-      console.log(import.meta.env.VITE_N8N_WEBHOOK_URL);
+      // console.log("Triggering meal plan generation for user: ", userId);
+      // console.log(import.meta.env.VITE_API_URL);
+      // console.log(import.meta.env.VITE_N8N_WEBHOOK_URL);
       const response = await fetch(N8N_WEBHOOK_URL, {
         method: "POST",
         headers: {
@@ -36,7 +36,7 @@ class MealPlanService {
         );
       }
       const responseData = await response.json();
-      console.log("Hello. Meal plan generated successfully: ", responseData);
+      // console.log("Hello. Meal plan generated successfully: ", responseData);
       return responseData;
     } catch (error) {
       console.error("Error generating meal plan: ", error);
@@ -46,8 +46,8 @@ class MealPlanService {
   static async getCurrentUserId() {
     try {
       const { data } = await api.get("/api/profile/");
-      console.log("DEBUG - profile data:", data);
-      console.log("DEBUG - user ID:", data.user, typeof data.user);
+      // console.log("DEBUG - profile data:", data);
+      // console.log("DEBUG - user ID:", data.user, typeof data.user);
       return data.user;
     } catch (error) {
       console.error("Error getting current user ID: ", error);
