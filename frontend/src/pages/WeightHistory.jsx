@@ -161,7 +161,7 @@ function WeightHistory() {
               padding: "10px 20px",
               border: "none",
               borderRadius: "6px",
-              backgroundColor: viewMode === "list" ? "#4CAF50" : "transparent",
+              backgroundColor: viewMode === "list" ? "#546E7A" : "transparent",
               color: viewMode === "list" ? "white" : "#450",
               cursor: "pointer",
               fontWeight: viewMode === "list" ? "bold" : "normal",
