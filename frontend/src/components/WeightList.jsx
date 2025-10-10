@@ -53,7 +53,7 @@ function WeightList({ entries }) {
                 index < entries.length - 1
                   ? entries[index + 1].weight
                   : entry.weight;
-              const change = entry.weight - prevWeight;
+              const change = (entry.weight - prevWeight).toFixed(1);
 
               return (
                 <tr key={entry.id} style={{ borderBottom: "1px solid #eee" }}>
