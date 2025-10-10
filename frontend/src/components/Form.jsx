@@ -6,8 +6,10 @@ import "../styles/Form.css";
 import LoadingIndicator from "./LoadingIndicator";
 
 function Form({ route, method }) {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState(method === "login" ? "guest" : "");
+  const [password, setPassword] = useState(
+    method === "login" ? "#demo2@25" : ""
+  );
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
@@ -35,6 +37,25 @@ function Form({ route, method }) {
   return (
     <form onSubmit={handleSubmit} className="form-container">
       <h1>{name}</h1>
+
+      {method === "login" && (
+        <div
+          style={{
+            backgroundColor: "#e8f5e9",
+            border: "1px solid #4CAF50",
+            borderRadius: "5px",
+            padding: "10px 15px",
+            marginBottom: "15px",
+            fontSize: "14px",
+            color: "#2e7d32",
+            textAlign: "center",
+          }}
+        >
+          <strong>🎯 For Recruiters: </strong> Demo credentials pre-filled for
+          quick access
+        </div>
+      )}
+
       <input
         className="form-input"
         type="text"
