@@ -2,7 +2,7 @@
 
 A full-stack nutrition and meal planning application with AI-powered chat assistance.
 
-🔗 **Live Demo**: [Web app](https://143aacb0-7949-4272-8999-8f68b30d84d2.e1-us-east-azure.choreoapps.dev)
+🔗 **Live Demo**: [Web app](https://72f68b31-ef30-4ec0-9478-e2d24b176648.e1-us-east-azure.choreoapps.dev)
 
 ## Tech Stack
 
