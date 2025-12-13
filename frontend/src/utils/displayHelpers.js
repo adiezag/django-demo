@@ -12,9 +12,9 @@ export const getActivityLevelDisplay = (value) => {
 
 export const getGoalDisplay = (value) => {
   const mapping = {
-    lose: "Lose Weight",
-    maintain: "Maintain Weight",
-    gain: "Gain Weight",
+    lose: "Lose weight",
+    maintain: "Maintain weight",
+    gain: "Gain weight",
   };
   return mapping[value] || value;
 };
