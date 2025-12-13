@@ -233,7 +233,7 @@ function MealPlanDisplay({ data }) {
     /Total Estimated Daily Calories:\s*~?(\d+)\s*kcal/i
   );
   const totalCalories = totalCaloriesMatch ? totalCaloriesMatch[1] : "Unknown";
-  console.log(totalCalories);
+  // console.log(totalCalories);
 
   return (
     <div>
