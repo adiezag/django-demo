@@ -9,6 +9,7 @@ import WeightHistory from "./pages/WeightHistory";
 import Settings from "./pages/Settings";
 import MealPlans from "./pages/MealPlan";
 import ProtectedRoute from "./components/ProtectedRoute";
+import MealsPage from "./pages/MealsPage";
 
 function Logout() {
   localStorage.clear();
@@ -64,6 +65,15 @@ function App() {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/meals"
+          element={
+            <ProtectedRoute>
+              <MealsPage />
+            </ProtectedRoute>
+          }
+        />
+
         <Route path="/login" element={<Login />} />
         <Route path="/logout" element={<Logout />} />
         <Route path="/register" element={<RegisterAndLogout />} />
