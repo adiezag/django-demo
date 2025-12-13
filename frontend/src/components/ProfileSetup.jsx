@@ -2,11 +2,11 @@ import { useState } from "react";
 import api from "../api";
 function ProfileSetup({ onProfileCreated }) {
   // At the top of ProfileSetup function, add:
-  console.log(
-    "onProfileCreated prop:",
-    onProfileCreated,
-    typeof onProfileCreated
-  );
+  // console.log(
+  //   "onProfileCreated prop:",
+  //   onProfileCreated,
+  //   typeof onProfileCreated
+  // );
   const [formData, setFormData] = useState({
     height: "",
     weight: "",
@@ -54,7 +54,13 @@ function ProfileSetup({ onProfileCreated }) {
   };
   return (
     <div style={{ maxWidth: "500px", margin: "0 auto", padding: "20px" }}>
-      <div style={{ textAlign: "center", marginBottom: "30px" }}>
+      <div
+        style={{
+          textAlign: "center",
+          marginBottom: "30px",
+          fontFamily: "monospace",
+        }}
+      >
         <h1>Welcome! </h1>
         <h1>Let's set up your profile</h1>
         <p>
@@ -66,6 +72,7 @@ function ProfileSetup({ onProfileCreated }) {
             backgroundColor: "#f0f0f0",
             padding: "10px",
             borderRadius: "8px",
+            fontFamily: "monospace",
           }}
         >
           Step {step} of 1 - Basic information
@@ -78,6 +85,7 @@ function ProfileSetup({ onProfileCreated }) {
           padding: "30px",
           borderRadius: "10px",
           boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+          fontFamily: "monospace",
         }}
       >
         <div style={{ marginBottom: "20px" }}>
@@ -87,6 +95,7 @@ function ProfileSetup({ onProfileCreated }) {
               display: "block",
               marginBottom: "5px",
               fontWeight: "bold",
+              fontFamily: "monospace",
             }}
           >
             Height (cm):
@@ -106,6 +115,7 @@ function ProfileSetup({ onProfileCreated }) {
               padding: "10px",
               border: "1px solid #ddd",
               borderRadius: "5px",
+              fontFamily: "monospace",
             }}
           />
         </div>
@@ -116,6 +126,7 @@ function ProfileSetup({ onProfileCreated }) {
               display: "block",
               marginBottom: "5px",
               fontWeight: "bold",
+              fontFamily: "monospace",
             }}
           >
             Weight (kg):
@@ -135,6 +146,7 @@ function ProfileSetup({ onProfileCreated }) {
               padding: "10px",
               border: "1px solid #ddd",
               borderRadius: "5px",
+              fontFamily: "monospace",
             }}
           />
         </div>
@@ -145,6 +157,7 @@ function ProfileSetup({ onProfileCreated }) {
               display: "block",
               marginBottom: "5px",
               fontWeight: "bold",
+              fontFamily: "monospace",
             }}
           >
             Date of Birth:
@@ -162,6 +175,7 @@ function ProfileSetup({ onProfileCreated }) {
               padding: "10px",
               border: "1px solid #ddd",
               borderRadius: "5px",
+              fontFamily: "monospace",
             }}
           />
         </div>
@@ -172,6 +186,7 @@ function ProfileSetup({ onProfileCreated }) {
               display: "block",
               marginBottom: "5px",
               fontWeight: "bold",
+              fontFamily: "monospace",
             }}
           >
             Activity Level:
@@ -187,6 +202,7 @@ function ProfileSetup({ onProfileCreated }) {
               padding: "10px",
               border: "1px solid #ddd",
               borderRadius: "5px",
+              fontFamily: "monospace",
             }}
           >
             <option value="">-- Select your activity level --</option>
@@ -207,6 +223,7 @@ function ProfileSetup({ onProfileCreated }) {
               display: "block",
               marginBottom: "5px",
               fontWeight: "bold",
+              fontFamily: "monospace",
             }}
           >
             Your Goal:
@@ -222,6 +239,7 @@ function ProfileSetup({ onProfileCreated }) {
               padding: "10px",
               border: "1px solid #ddd",
               borderRadius: "5px",
+              fontFamily: "monospace",
             }}
           >
             <option value="">-- Select your goal --</option>
@@ -236,13 +254,14 @@ function ProfileSetup({ onProfileCreated }) {
           style={{
             width: "100%",
             padding: "15px",
-            backgroundColor: isSubmitting ? "#ccc" : "#4CAF50",
-            color: "white",
+            backgroundColor: isSubmitting ? "#ccc" : "#c5ced3ff",
+            color: "#000000",
             border: "none",
             borderRadius: "5px",
             fontSize: "16px",
             cursor: isSubmitting ? "not-allowed" : "pointer",
             fontWeight: "bold",
+            fontFamily: "monospace",
           }}
         >
           {isSubmitting ? "Creating Profile..." : "Complete Setup"}

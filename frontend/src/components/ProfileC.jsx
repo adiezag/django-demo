@@ -50,10 +50,17 @@ function ProfileC({ profile, onUpdate }) {
           border: "1px solid #ccc",
           padding: "20x",
           borderRadius: "8px",
+          fontFamily: "monospace",
         }}
       >
-        <h3>Edit Profile</h3>
-        <div style={{ marginBottom: "10px" }}>
+        <h3>Edit profile</h3>
+        <div
+          style={{
+            marginBottom: "10px",
+            fontFamily: "monospace",
+            fontSize: "15px",
+          }}
+        >
           <label>
             <strong>Height (cm): </strong>
           </label>
@@ -62,11 +69,21 @@ function ProfileC({ profile, onUpdate }) {
             name="height"
             value={editData.height}
             onChange={handleInputChange}
-            style={{ marginLeft: "10px", padding: "5px" }}
+            style={{
+              marginLeft: "10px",
+              padding: "5px",
+              fontFamily: "monospace",
+            }}
           />
         </div>
 
-        <div style={{ marginBottom: "10px" }}>
+        <div
+          style={{
+            marginBottom: "10px",
+            fontFamily: "monospace",
+            fontSize: "15px",
+          }}
+        >
           <label>
             <strong>Weight (kg):</strong>{" "}
           </label>
@@ -75,7 +92,11 @@ function ProfileC({ profile, onUpdate }) {
             name="weight"
             value={editData.weight}
             onChange={handleInputChange}
-            style={{ marginLeft: "10px", padding: "5px" }}
+            style={{
+              marginLeft: "10px",
+              padding: "5px",
+              fontFamily: "monospace",
+            }}
           />
         </div>
 
@@ -90,7 +111,13 @@ function ProfileC({ profile, onUpdate }) {
           />
         </div> */}
 
-        <div style={{ marginBottom: "10px" }}>
+        <div
+          style={{
+            marginBottom: "10px",
+            fontFamily: "monospace",
+            fontSize: "15px",
+          }}
+        >
           <label>
             <strong>Activity level: </strong>
           </label>
@@ -98,21 +125,36 @@ function ProfileC({ profile, onUpdate }) {
             name="activity_level"
             value={editData.activity_level}
             onChange={handleInputChange}
-            style={{ marginLeft: "10px", padding: "5px" }}
+            style={{
+              marginLeft: "10px",
+              padding: "5px",
+              fontFamily: "monospace",
+              fontSize: "12px",
+            }}
           >
             {/* <option value="">-- Select your activity level --</option> */}
-            <option value="sedentary">Sedentary (little to no exercise)</option>
-            <option value="light">Light (light exercise 1-3 days/week)</option>
-            <option value="moderate">
+            <option value="sedentary" style={{ fontFamily: "monospace" }}>
+              Sedentary (little to no exercise)
+            </option>
+            <option value="light" style={{ fontFamily: "monospace" }}>
+              Light (light exercise 1-3 days/week)
+            </option>
+            <option value="moderate" style={{ fontFamily: "monospace" }}>
               Moderate (moderate exercise 3-5 days/week)
             </option>
-            <option value="active">
+            <option value="active" style={{ fontFamily: "monospace" }}>
               Active (heavy exercise 6-7 days/week)
             </option>
           </select>
         </div>
 
-        <div style={{ marginBottom: "20px" }}>
+        <div
+          style={{
+            marginBottom: "20px",
+            fontFamily: "monospace",
+            fontSize: "15px",
+          }}
+        >
           <label>
             <strong>Goal: </strong>
           </label>
@@ -120,11 +162,22 @@ function ProfileC({ profile, onUpdate }) {
             name="goal"
             value={editData.goal}
             onChange={handleInputChange}
-            style={{ marginLeft: "10px", padding: "5px" }}
+            style={{
+              marginLeft: "10px",
+              padding: "5px",
+              fontFamily: "monospace",
+              fontSize: "12px",
+            }}
           >
-            <option value="lose">Lose Weight</option>
-            <option value="maintain">Maintain Weight</option>
-            <option value="gain">Gain Weight</option>
+            <option value="lose" style={{ fontFamily: "monospace" }}>
+              Lose weight
+            </option>
+            <option value="maintain" style={{ fontFamily: "monospace" }}>
+              Maintain weight
+            </option>
+            <option value="gain" style={{ fontFamily: "monospace" }}>
+              Gain weight
+            </option>
           </select>
         </div>
         <div>
@@ -134,13 +187,14 @@ function ProfileC({ profile, onUpdate }) {
             style={{
               marginRight: "10px",
               padding: "10px 20px",
-              backgroundColor: "#546E7A",
-              color: "white",
+              backgroundColor: "#c5ced3ff",
+              color: "#000000",
               border: "none",
               borderRadius: "5px",
               fontSize: "16px",
               fontWeight: "bold",
               cursor: isLoading ? "not-allowed" : "pointer",
+              fontFamily: "monospace",
             }}
           >
             {isLoading ? "Saving" : "Save"}
@@ -150,13 +204,14 @@ function ProfileC({ profile, onUpdate }) {
             disabled={isLoading}
             style={{
               padding: "10px 20px",
-              backgroundColor: "#f44336",
+              backgroundColor: "#ed372aff",
               color: "white",
               border: "none",
               borderRadius: "5px",
               fontSize: "16px",
               fontWeight: "bold",
               cursor: isLoading ? "not-allowed" : "pointer",
+              fontFamily: "monospace",
             }}
           >
             Cancel
@@ -168,40 +223,49 @@ function ProfileC({ profile, onUpdate }) {
 
   return (
     <div
-      style={{ border: "1px solid #ddd", padding: "20px", borderRadius: "8px" }}
+      style={{
+        border: "1px solid #ddd",
+        padding: "20px",
+        borderRadius: "8px",
+        fontFamily: "monospace",
+        fontsize: "20px",
+      }}
     >
-      <h3>Profile information</h3>
-      <p>
+      {/* <h3 style={{ fontFamily: "monospace", fontSize: "18px" }}>
+        Profile information
+      </h3> */}
+      <p style={{ fontFamily: "monospace", fontSize: "15px" }}>
         <strong>Height:</strong> {profile.height} cm
       </p>
-      <p>
+      <p style={{ fontFamily: "monospace", fontSize: "15px" }}>
         <strong>Weight:</strong> {profile.weight} kg
       </p>
-      <p>
+      <p style={{ fontFamily: "monospace", fontSize: "15px" }}>
         <strong>Age:</strong> {profile.age}
       </p>
-      <p>
+      <p style={{ fontFamily: "monospace", fontSize: "15px" }}>
         <strong>Activity level:</strong>{" "}
         {getActivityLevelDisplay(profile.activity_level)}
       </p>
-      <p>
+      <p style={{ fontFamily: "monospace", fontSize: "15px" }}>
         <strong>Goal:</strong> {getGoalDisplay(profile.goal)}
       </p>
       <button
         onClick={() => setIsEditing(true)}
         style={{
           padding: "10px 20px",
-          backgroundColor: "#546E7A",
-          color: "white",
+          // backgroundColor: "#546E7A",
+          color: "#000000",
           border: "none",
           borderRadius: "5px",
           fontSize: "16px",
           cursor: "pointer",
           fontWeight: "bold",
           marginTop: "10px",
+          fontFamily: "monospace",
         }}
       >
-        Edit Profile
+        Edit profile
       </button>
     </div>
   );
