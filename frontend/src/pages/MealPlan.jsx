@@ -189,9 +189,18 @@
 
 import { useNavigate } from "react-router-dom";
 import MealPlanChat from "../components/MealPlanChat";
+import ManualMealModal from "../components/ManualMealModal";
+import { useState } from "react";
+import MealPlanService from "../services/MealPlanService";
 
 function MealPlans() {
   const navigate = useNavigate();
+  const [isManualMealModalOpen, setIsManualMealModalOpen] = useState(false);
+  const [messages, setMessages] = useState([]);
+  const [userId, setUserId] = useState(null);
+
+  // TODO: fetch userId when components mounts
+  // setUserId(...) with your actual logic
 
   return (
     <div>
@@ -201,35 +210,64 @@ function MealPlans() {
           justifyContent: "space-between",
           alignItems: "center",
           marginBottom: "20px",
+          fontFamily: "monospace",
         }}
       >
-        <h2 style={{ margin: 0 }}>Meal Plans</h2>
+        <h2 style={{ margin: 0 }}>AI nutrition assistant</h2>
         <button
           onClick={() => navigate("/")}
           style={{
             padding: "10px 20px",
-            backgroundColor: "#546E7A",
-            color: "white",
+            // backgroundColor: "#546E7A",
+            color: "#000000",
             border: "none",
             borderRadius: "5px",
             fontSize: "16px",
             cursor: "pointer",
             fontWeight: "bold",
+            fontFamily: "monospace",
           }}
         >
           ← Dashboard
         </button>
+        {/* <button
+          onClick={() => setIsManualMealModalOpen(true)}
+          style={{
+            marginLeft: "10px",
+            padding: "10px 16px",
+            // backgroundColor: "#2196F3",
+            color: "#000000",
+            border: "none",
+            borderRadius: "8px",
+            cursor: "pointer",
+            fontWeight: "bold",
+            fontFamily: "monospace",
+          }}
+        >
+          + Log Meal
+        </button> */}
       </div>
       <div>
-        <h3 style={{ marginBottom: "10px" }}>AI Nutrition Assistant</h3>
+        {/* <h3 style={{ marginBottom: "10px" }}>AI Nutrition Assistant</h3> */}
 
-        <p>
+        <p style={{ fontFamily: "monospace" }}>
           Chat with your personal AI nutrition assistant for meal plans and
           dietary advice. Get personalized recommendations based on your goals
           and preferences.
         </p>
       </div>
-      <MealPlanChat />
+      <MealPlanChat
+        messages={messages}
+        setMessages={setMessages}
+        userId={userId}
+      />
+      {isManualMealModalOpen && (
+        <ManualMealModal
+          isOpen={isManualMealModalOpen}
+          onClose={() => setIsManualMealModalOpen(false)}
+          //onSave={fetchMeals}
+        />
+      )}
     </div>
   );
 }

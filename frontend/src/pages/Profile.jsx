@@ -65,7 +65,7 @@ function Profile() {
     return (
       <div>
         <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
-          <h2>User's Profile</h2>
+          <h2>User's profile</h2>
           <div
             style={{
               border: "1px solid #ddd",
@@ -79,12 +79,14 @@ function Profile() {
               onClick={() => (window.location.href = "/create-profile")} // Adjust this to your create profile route
               style={{
                 padding: "10px 20px",
-                backgroundColor: "#4CAF50",
+                // backgroundColor: "#4CAF50",
                 color: "white",
                 border: "none",
                 borderRadius: "4px",
                 cursor: "pointer",
                 marginTop: "10px",
+                //fontSize: "15px",
+                fontFamily: "monospace",
               }}
             >
               Create Profile
@@ -98,27 +100,31 @@ function Profile() {
   }
 
   return (
-    <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
+    <div style={{ maxWidth: "400px", margin: "0 auto", padding: "20px" }}>
       <div
         style={{
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
           marginBottom: "20px",
+          // height: "100vh",
+          fontFamily: "monospace",
+          boxSizing: "border-box",
         }}
       >
-        <h2 style={{ margin: 0 }}>User's Profile</h2>
+        <h2 style={{ margin: 0 }}>User's profile</h2>
         <button
           onClick={() => navigate("/")}
           style={{
             padding: "10px 20px",
-            backgroundColor: "#546E7A",
-            color: "white",
+            // backgroundColor: "#546E7A",
+            color: "#000000",
             border: "none",
             borderRadius: "5px",
             fontSize: "16px",
             cursor: "pointer",
             fontWeight: "bold",
+            fontFamily: "monospace",
           }}
         >
           ← Dashboard

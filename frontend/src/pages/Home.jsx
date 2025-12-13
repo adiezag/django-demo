@@ -70,13 +70,14 @@ function Home() {
           onClick={handleLogout}
           style={{
             padding: "10px 20px",
-            backgroundColor: "#546E7A",
-            color: "white",
+            // backgroundColor: "#546E7A",
+            color: "#000000",
             border: "none",
             borderRadius: "5px",
             fontSize: "16px",
             cursor: "pointer",
             fontWeight: "bold",
+            fontFamily: "monospace",
           }}
         >
           Logout
