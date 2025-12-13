@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from rest_framework import serializers
 from .models import Note
 from .models import ProfileDemo, WeightEntry, Macros
+from .models import Meal
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -36,3 +37,25 @@ class MacrosSerializer(serializers.ModelSerializer):
         model = Macros
         fields = ['calories', 'protein', 'carbohydrates', 'fats', 'updated_at']
         read_only_fields = ['updated_at']
+
+
+class MealSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Meal
+        fields = [
+            'id',
+            'user',
+            'meal_description',  # Changed from 'name' and 'portion',
+            'is_eaten',
+            'meal_type',
+            'date',  # Changed from 'date_logged'
+            'calories',
+            'protein',
+            'carbs',
+            'fat',
+            'source',  # Keep or remove is_estimated if you had it
+            'notes',
+            'created_at',
+            'updated_at',
+        ]
+        read_only_fields = ['id', 'user', 'created_at', 'updated_at']

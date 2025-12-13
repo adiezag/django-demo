@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime, date
+from django.utils import timezone
 # Create your models here.
 
 class Note(models.Model):
@@ -27,6 +28,9 @@ class ProfileDemo(models.Model):
     GOAL_CHOICES = [("lose","Lose"),("maintain","Maintain"),("gain","Gain")]
     goal = models.CharField(max_length=20, choices=GOAL_CHOICES)
 
+    GENDER_CHOICES = [('male', 'Male'), ('female','Female')]
+    gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
+    
     @property
     def age(self):
         today = datetime.now().date()
@@ -85,3 +89,30 @@ class Macros(models.Model):
 
     def __str__(self):
         return f"{self.user.username}: {self.calories} kcal"
+    
+
+class Meal(models.Model):
+    MEAL_TYPES = [("breakfast", "Breakfast"),("lunch","Lunch"),("dinner","Dinner"),("snack","Snack")]
+    SOURCE_CHOICES = [("manual", "Manual Entry"), ("ai_generated", "AI Generated")]
+    user = models.ForeignKey(User, on_delete=models.CASCADE, related_name = "meals")
+    meal_description= models.TextField()
+    meal_type=models.CharField(max_length=20, choices=MEAL_TYPES)
+
+    # Nutrition - required
+    calories=models.FloatField()
+    protein=models.FloatField()
+    carbs=models.FloatField()
+    fat=models.FloatField()
+
+    order = models.IntegerField(default=1)
+    is_eaten = models.BooleanField(default=False)
+
+    source=models.CharField(max_length=20, choices = SOURCE_CHOICES, default="manual")
+    notes = models.TextField(blank=True, null=True)
+
+    date = models.DateField(default=timezone.now) 
+    created_at=models.DateTimeField(auto_now_add=True)
+    updated_at=models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"{self.meal_description[:50]} ({self.meal_type}) - {self.user.username}"
