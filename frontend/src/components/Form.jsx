@@ -36,19 +36,20 @@ function Form({ route, method }) {
   };
   return (
     <form onSubmit={handleSubmit} className="form-container">
-      <h1>{name}</h1>
+      <h1 style={{ fontFamily: "monospace" }}>{name}</h1>
 
       {method === "login" && (
         <div
           style={{
-            backgroundColor: "#e8f5e9",
-            border: "1px solid #4CAF50",
+            backgroundColor: "#e7ede7ff",
+            border: "1px solid #000000",
             borderRadius: "5px",
             padding: "10px 15px",
             marginBottom: "15px",
             fontSize: "14px",
-            color: "#2e7d32",
+            color: "#000000",
             textAlign: "center",
+            fontFamily: "monospace",
           }}
         >
           <strong>🎯 For Recruiters: </strong> Demo credentials pre-filled for
@@ -62,6 +63,7 @@ function Form({ route, method }) {
         value={username}
         onChange={(e) => setUsername(e.target.value)}
         placeholder="Username"
+        style={{ fontFamily: "monospace" }}
       />
       <input
         className="form-input"
@@ -69,6 +71,7 @@ function Form({ route, method }) {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
         placeholder="Password"
+        style={{ fontFamily: "monospace" }}
       />
       {loading && <LoadingIndicator />}
       <button
@@ -76,28 +79,36 @@ function Form({ route, method }) {
         type="submit"
         style={{
           padding: "10px 20px",
-          backgroundColor: "#4CAF50",
-          color: "white",
+          backgroundColor: "#e8e8e8ff",
+          color: "#000000",
           border: "none",
           borderRadius: "5px",
           fontSize: "16px",
           cursor: "pointer",
           fontWeight: "bold",
           marginTop: "10px",
+          fontFamily: "monospace",
         }}
       >
         {name}
       </button>
-      <p style={{ marginTop: "20px", textAlign: "center" }}>
+      <p
+        style={{
+          marginTop: "20px",
+          textAlign: "center",
+          fontFamily: "monospace",
+        }}
+      >
         {method === "login" ? (
           <>
             Don't have an account?{" "}
             <Link
               to="/register"
               style={{
-                color: "#4CAF50",
+                color: "#000000",
                 textDecoration: "none",
                 fontWeight: "bold",
+                fontFamily: "monospace",
               }}
             >
               Register here
@@ -109,9 +120,10 @@ function Form({ route, method }) {
             <Link
               to="/login"
               style={{
-                color: "#4CAF50",
+                color: "#000000",
                 textDecoration: "none",
                 fontWeight: "bold",
+                fontFamily: "monospace",
               }}
             >
               Login here
