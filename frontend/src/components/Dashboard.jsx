@@ -1,32 +1,58 @@
 import { useNavigate } from "react-router-dom";
-
+import MacroProgress from "./MacroProgress";
+import { useState } from "react";
+import { useEffect } from "react";
+import MealPlanService from "../services/MealPlanService";
 function Dashboard() {
   const navigate = useNavigate();
+  const [macros, setMacros] = useState(null);
+  const [loading, setLoading] = useState(true); // Add this line
+
+  useEffect(() => {
+    const fetchMacros = async () => {
+      try {
+        const todayLocal = new Date().toLocaleDateString("en-CA");
+        const data = await MealPlanService.getMacros(todayLocal);
+        setMacros(data);
+      } catch (error) {
+        console.error("Error fetching macros:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchMacros();
+  }, []);
 
   const menuItems = [
     {
-      title: "My Profile",
+      title: "My profile",
       description: "View and update your profile information",
       action: () => navigate("/profile"),
-      color: "#2E7D32",
+      color: "#000000",
     },
     {
-      title: "Create Meal Plans",
+      title: "AI nutrition assistant",
       description: "Get AI personalized meal recommendations",
       action: () => navigate("/meal-plans"),
-      color: "#2196F3",
+      color: "#000000",
     },
     {
-      title: "Weight Tracking",
-      description: "Track your weight progress over time",
+      title: "Progress tracker",
+      description: "Track your weight and macros progress over time",
       action: () => navigate("/weight-history"),
-      color: "#D84315",
+      color: "#000000",
     },
+    // {
+    //   title: "Settings",
+    //   description: "App settings and preferences",
+    //   action: () => navigate("/settings"),
+    //   color: "#9C27B0",
+    // },
     {
-      title: "Settings",
-      description: "App settings and preferences",
-      action: () => navigate("/settings"),
-      color: "#9C27B0",
+      title: "Daily meals",
+      description: "View and update your meals",
+      action: () => navigate("/meals"),
+      color: "#000000",
     },
     // {
     //   title: "Calculator",
@@ -38,12 +64,58 @@ function Dashboard() {
 
   return (
     <div style={{ maxWidth: "800px", margin: "0 auto", padding: "20px" }}>
-      <header style={{ textAlign: "center", marginBottom: "40px" }}>
+      <header
+        style={{
+          textAlign: "center",
+          marginBottom: "40px",
+          fontFamily: "monospace",
+        }}
+      >
         <h1>Welcome back!</h1>
         <p style={{ marginTop: "8px", fontSize: "16px" }}>
-          <strong>Dashboard</strong>
+          {/* <h2>
+            <strong>Dashboard</strong>
+          </h2> */}
         </p>
       </header>
+      <div style={{ marginBottom: "40px" }}>
+        {/* <h2 style={{ textAlign: "center", marginBottom: "20px" }}>
+          Today's Progress
+        </h2> */}
+        <div
+          style={{
+            maxWidth: "600px",
+            margin: "0 auto",
+            backgroundColor: "white",
+            padding: "20px",
+            borderRadius: "10px",
+            boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
+          }}
+        >
+          {macros ? (
+            <>
+              <MacroProgress macros={macros} />
+              {/* <button
+                onClick={() => navigate("/meals")}
+                style={{
+                  width: "100%",
+                  marginTop: "16px",
+                  padding: "10px",
+                  backgroundColor: "#2e707dff",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "5px",
+                  cursor: "pointer",
+                }}
+              >
+                View Today's Meals
+              </button> */}
+            </>
+          ) : (
+            <div>Loading macros...</div>
+          )}
+        </div>
+      </div>
 
       <div
         style={{
@@ -64,8 +136,9 @@ function Dashboard() {
               boxShadow: "0 2px 10px rgba(0,0,0,0.1)",
               cursor: "pointer",
               transition: "transform 0.2s, box-shadow 0.2s",
-              border: `3px solid ${item.color}`,
+              border: "3px solid",
               textAlign: "center",
+              fontFamily: "monospace",
             }}
             onMouseEnter={(e) => {
               e.target.style.transform = "translateY(-5px)";
@@ -83,33 +156,6 @@ function Dashboard() {
           </div>
         ))}
       </div>
-
-      {/* <div
-        style={{
-          textAlign: "center",
-          padding: "20px",
-          backgroundColor: "#f9f9f9",
-          borderRadius: "10px",
-        }}
-      >
-        <h3>Quick Stats</h3>
-        <p>Your personalized meal plans and progress tracking are ready!</p>
-        <button
-          onClick={() => navigate("/meal-plans")}
-          style={{
-            padding: "10px 30px",
-            backgroundColor: "#4CAF50",
-            color: "white",
-            border: "none",
-            borderRadius: "5px",
-            fontSize: "16px",
-            cursor: "pointer",
-            fontWeight: "bold",
-          }}
-        >
-          Get Meal Plan
-        </button>
-      </div> */}
     </div>
   );
 }
